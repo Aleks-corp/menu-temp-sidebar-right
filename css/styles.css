@@ -19,7 +19,7 @@ h2 {
 .navigation {
   max-width: 300px;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: transparent;
 }
 
 .nav-menu {
@@ -30,7 +30,7 @@ h2 {
   border-radius: 10px;
   box-sizing: initial;
   border-left: 5px solid #2196f3;
-  transition: 500ms;
+  transition: 250ms;
   overflow: hidden;
 }
 @media screen and (max-width: 767px) {
@@ -72,6 +72,7 @@ h2 {
   height: 20px;
   width: 100%;
   background-color: #ffffff;
+  transition: 250ms;
   display: none;
 }
 
@@ -109,6 +110,26 @@ h2 {
 .nav-menu__item.active .nav-menu__wrap:nth-child(1),
 .nav-menu__item.active .nav-menu__wrap:nth-child(2) {
   display: block;
+}
+
+@media screen and (max-width: 767px) {
+  .nav-menu.active .nav-menu__wrap:nth-child(1),
+.nav-menu.active .nav-menu__wrap:nth-child(2) {
+    display: none;
+  }
+  .nav-menu.active .nav-menu__item {
+    border-radius: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-menu:hover .nav-menu__wrap:nth-child(1),
+.nav-menu:hover .nav-menu__wrap:nth-child(2) {
+    display: none;
+  }
+  .nav-menu:hover .nav-menu__item {
+    border-radius: 20px;
+  }
 }
 
 .nav-menu__link {

@@ -1,7 +1,7 @@
 .navigation {
   max-width: 300px;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: transparent;
 }
 
 .nav-menu {
@@ -12,7 +12,7 @@
   border-radius: 10px;
   box-sizing: initial;
   border-left: 5px solid #2196f3;
-  transition: 500ms;
+  transition: 250ms;
   overflow: hidden;
   @media screen and (max-width: 767px) {
     &.active {
@@ -40,6 +40,7 @@
   width: 100%;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+
   &.active {
     background-color: #ffffff;
   }
@@ -53,6 +54,8 @@
   height: 20px;
   width: 100%;
   background-color: #ffffff;
+  transition: 250ms;
+
   display: none;
 }
 .nav-menu__wrap:nth-child(1)::before {
@@ -71,6 +74,7 @@
   height: 20px;
   width: 100%;
   background-color: #ffffff;
+
   display: none;
 }
 .nav-menu__wrap:nth-child(2)::before {
@@ -86,6 +90,28 @@
 .nav-menu__item.active .nav-menu__wrap:nth-child(1),
 .nav-menu__item.active .nav-menu__wrap:nth-child(2) {
   display: block;
+}
+.nav-menu.active {
+  @media screen and (max-width: 767px) {
+    .nav-menu__wrap:nth-child(1),
+    .nav-menu__wrap:nth-child(2) {
+      display: none;
+    }
+    .nav-menu__item {
+      border-radius: 20px;
+    }
+  }
+}
+.nav-menu:hover {
+  @media screen and (min-width: 768px) {
+    .nav-menu__wrap:nth-child(1),
+    .nav-menu__wrap:nth-child(2) {
+      display: none;
+    }
+    .nav-menu__item {
+      border-radius: 20px;
+    }
+  }
 }
 .nav-menu__link {
   position: relative;
