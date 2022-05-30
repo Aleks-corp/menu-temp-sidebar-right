@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="author license" href="/about" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>MobHeader</title>
+  </head>
+  <body>
+    <div class="navigation">
+      <nav class="mob-menu">
+        <ul class="mob-menu__list">
+          <li class="mob-menu__item active">
+            <b class="mob-menu__wrap"></b>
+            <b class="mob-menu__wrap"></b>
+            <a href="#" class="mob-menu__link"
+              ><span class="mob-menu__icon"
+                ><ion-icon name="home-outline"></ion-icon></span
+              ><span class="mob-menu__title">Home</span></a
+            >
+          </li>
+          <li class="mob-menu__item">
+            <b class="mob-menu__wrap"></b>
+            <b class="mob-menu__wrap"></b>
+            <a href="#" class="mob-menu__link"
+              ><span class="mob-menu__icon"
+                ><ion-icon name="document-attach-outline"></ion-icon></span
+              ><span class="mob-menu__title">Category</span></a
+            >
+          </li>
+          <li class="mob-menu__item">
+            <b class="mob-menu__wrap"></b>
+            <b class="mob-menu__wrap"></b>
+            <a href="#" class="mob-menu__link"
+              ><span class="mob-menu__icon"
+                ><ion-icon name="diamond-outline"></ion-icon></span
+              ><span class="mob-menu__title">Ideas</span></a
+            >
+          </li>
+          <li class="mob-menu__item">
+            <b class="mob-menu__wrap"></b>
+            <b class="mob-menu__wrap"></b>
+            <a href="#" class="mob-menu__link"
+              ><span class="mob-menu__icon"
+                ><ion-icon name="albums-outline"></ion-icon></span
+              ><span class="mob-menu__title">Gallery</span></a
+            >
+          </li>
+          <li class="mob-menu__item">
+            <b class="mob-menu__wrap"></b>
+            <b class="mob-menu__wrap"></b>
+            <a href="#" class="mob-menu__link"
+              ><span class="mob-menu__icon"
+                ><ion-icon name="settings-outline"></ion-icon></span
+              ><span class="mob-menu__title">Setting</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="thumb">
+      <ion-icon name="menu-outline" class="open"></ion-icon>
+      <ion-icon name="close-outline" class="close"></ion-icon>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      let menuThumb = document.querySelector(".thumb");
+      let mobMenu = document.querySelector(".mob-menu");
+
+      menuThumb.onclick = function () {
+        menuThumb.classList.toggle("active");
+        mobMenu.classList.toggle("active");
+      };
+
+      let list = document.querySelectorAll(".mob-menu__item");
+      for (let i = 0; i < list.length; i++) {
+        list[i].onclick = function () {
+          let j = 0;
+          while (j < list.length) {
+            list[j++].className = "mob-menu__item";
+          }
+          list[i].className = "mob-menu__item active";
+        };
+      }
+    </script>
+  </body>
+</html>
